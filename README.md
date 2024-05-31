@@ -6,8 +6,8 @@
 
 <p align="center">
 <br>
-![](https://komarev.com/ghpvc/?username=nGQD&style=for-the-badge&color=blueviolet)
-
+![]()
+<a><img src="https://komarev.com/ghpvc/?username=nGQD&style=for-the-badge&color=blueviolet" alt="VisitorCount" /></a>&nbsp;
 <a href="https://www.linkedin.com/in/qi-ding-ng/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
 <a href="mailto:ngqiding@gmail.com?subject=Greetings,%20Qi%20Ding"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
 
