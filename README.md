@@ -1,8 +1,19 @@
 [![Matrix SVG](https://raw.githubusercontent.com/rodrigograca31/rodrigograca31/master/matrix.svg)](https://www.youtube.com/watch?v=SDkAGkd4NLc) 
 
-## Empowering innovation through excellence: I'm Qi Ding 👋
+<p>
+  <h1 align="center"><b>Empowering Innovation through Excellence: Qi Ding Ng</b></h1>
+</p>
 
-![](https://komarev.com/ghpvc/?username=nGQD&style=for-the-badge%color=blueviolet)
+<p align="center">
+<br>
+![](https://komarev.com/ghpvc/?username=nGQD&style=for-the-badge&color=blueviolet)
+
+<a href="https://www.linkedin.com/in/qi-ding-ng/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+<a href="mailto:ngqiding@gmail.com?subject=Greetings,%20Qi%20Ding"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
+
+</p>
+
+
 
 
 - 🔭 I’m currently working on my startup delivering one-stop CV solutions, and my own postgraduate studies on HDC!
