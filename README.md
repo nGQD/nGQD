@@ -14,9 +14,10 @@
 
 <img align="right" width="50%" alt="GIF" src="./spinning-globe-white.gif" />
 
-- 🔭 Working: Consultancy, Startup & PhD
-- 🌱 Learning: Docker & Kubernetes
-- 👯 Seeking: \[Full-Time\] Web3 || ML || Research
+```
+- 🔭 Working on Consultancy, Startup & PhD
+- 🌱 Learning Docker & Kubernetes
+- 👯 Seeking full-time Web3 || ML || Research
 - 💬 AMA! You've got the deets, fire away!
 - ⚡ Fun fact: I can only release very few codes to protect my stakeholders' confidentiality, but we can always have a ♨️ talk about high-level concepts and design.
-
+```
