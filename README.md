@@ -12,7 +12,7 @@
 
 </p>
 
-<img align="right" height="25%" alt="GIF" src="./spinning-globe-white.gif" />
+<img align="right" width="50" alt="GIF" src="./spinning-globe-white.gif" />
 
 - 🔭 Working: Consultancy, Startup & PhD
 - 🌱 Learning: Docker & Kubernetes
