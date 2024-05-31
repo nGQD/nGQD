@@ -6,15 +6,13 @@
 
 <p align="center">
 <br>
-![]()
 <a><img src="https://komarev.com/ghpvc/?username=nGQD&style=for-the-badge&color=blueviolet" alt="VisitorCount" /></a>&nbsp;
 <a href="https://www.linkedin.com/in/qi-ding-ng/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
 <a href="mailto:ngqiding@gmail.com?subject=Greetings,%20Qi%20Ding"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
 
 </p>
 
-
-
+<img align="right" height="270px" alt="GIF" src="[https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif](https://www.google.com/url?sa=i&url=https%3A%2F%2Fpsychotherapybath.co.uk%2Fhttp%2Far.europeanwriterstour.com%2Fimages-2023%2Ftransparent-spinning-globe-gif&psig=AOvVaw24KWBxKOARR4US7wauPgkJ&ust=1717257794611000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiXn_yhuIYDFQAAAAAdAAAAABAX)" />
 
 - 🔭 I’m currently working on my startup delivering one-stop CV solutions, and my own postgraduate studies on HDC!
 - 🌱 I’m currently learning Docker and Kubernetes for even stronger engineering skills to deploy various SOTA onto prod.
