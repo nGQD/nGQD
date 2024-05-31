@@ -12,7 +12,7 @@
 
 </p>
 
-<img align="right" height="270px" alt="GIF" src="[https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif](https://www.google.com/url?sa=i&url=https%3A%2F%2Fpsychotherapybath.co.uk%2Fhttp%2Far.europeanwriterstour.com%2Fimages-2023%2Ftransparent-spinning-globe-gif&psig=AOvVaw24KWBxKOARR4US7wauPgkJ&ust=1717257794611000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiXn_yhuIYDFQAAAAAdAAAAABAX)" />
+<img align="right" height="270px" alt="GIF" src="static/spinning-globe-white.gif" />
 
 - 🔭 I’m currently working on my startup delivering one-stop CV solutions, and my own postgraduate studies on HDC!
 - 🌱 I’m currently learning Docker and Kubernetes for even stronger engineering skills to deploy various SOTA onto prod.
