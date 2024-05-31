@@ -12,7 +12,7 @@
 
 </p>
 
-<img align="right" height="270px" alt="GIF" src="https://raw.githubusercontent.com/nGQD/nGQD/static/spinning-globe-white.gif" />
+<img align="right" height="270px" alt="GIF" src="https://raw.githubusercontent.com/nGQD/nGQD/spinning-globe-white.gif" />
 
 - 🔭 I’m currently working on my startup delivering one-stop CV solutions, and my own postgraduate studies on HDC!
 - 🌱 I’m currently learning Docker and Kubernetes for even stronger engineering skills to deploy various SOTA onto prod.
