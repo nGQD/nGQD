@@ -1,5 +1,6 @@
-[![Matrix SVG](https://raw.githubusercontent.com/rodrigograca31/rodrigograca31/master/matrix.svg)](https://www.youtube.com/watch?v=SDkAGkd4NLc) 
+<!--[![Matrix SVG](https://raw.githubusercontent.com/rodrigograca31/rodrigograca31/master/matrix.svg)](https://www.youtube.com/watch?v=SDkAGkd4NLc) -->
 
+<img align="right" width="45%" alt="GIF" src=".https://www.google.com/url?sa=i&url=https%3A%2F%2Fpansatyrical.tumblr.com%2Fpost%2F184189611300&psig=AOvVaw3o-ER50p7NuOsTKWUGCznH&ust=1717299767957000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOD7uqi-uYYDFQAAAAAdAAAAABAE" />
 
 # 💫 About Me:
 
