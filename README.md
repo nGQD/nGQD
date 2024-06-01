@@ -42,9 +42,9 @@
 </p>
 
 ## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=nGQD&theme=onedark&no-frame=false&no-bg=true&margin-w=4)
+![](https://github-profile-trophy.vercel.app/?username=nGQD&theme=onedark&no-frame=false&no-bg=true&margin-w=4&&rank=-?)
 
-### ✍️ Random Dev Quote
+### ✍️ Insightful Quotes
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
 ### 🔝 Top Contributed Repo
