@@ -15,15 +15,15 @@
 <br>
 
 ```
-- 🔭 def work(self): -> list
+🔭 def work(self): -> list
 	return ["Consultant", "Startup", "PhD"]
-- 🌱 def learn(self): -> str
+🌱 def learn(self): -> str
 	return "Docker and Kubernetes"
-- 👯 def seek(self): -> bool
+👯 def seek(self): -> bool
 	return full_time and (web3 or ai research)
 
-- 💬 AMA! You've got the deets, fire away!
-- ⚡ Fun fact: I can only release very few codes
+💬 AMA! You've got the deets, fire away!
+⚡ Fun fact: I can only release very few codes
 		to protect my stakeholders,
                 but we can always have a ♨️ talk
                 about high-level concepts & design.
