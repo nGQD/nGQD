@@ -15,9 +15,13 @@
 <br>
 
 ```
-- 🔭 Working as Freelance Consultant, Startup & PhD
-- 🌱 Getting the hang of Docker & Kubernetes
-- 👯 Seeking full-time Web3, AI, Research jobs
+- 🔭 def work(self): -> list
+	return ["Consultant", "Startup", "PhD"]
+- 🌱 def learn(self): -> str
+	return "Docker and Kubernetes"
+- 👯 def seek(self): -> bool
+	return self.full_time and (web3 or ai or research)
+
 - 💬 AMA! You've got the deets, fire away!
 - ⚡ Fun fact: I can only release very few codes to
                 protect my stakeholders' confidentiality,
