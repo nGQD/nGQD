@@ -11,7 +11,7 @@
 
 </p>
 
-<img align="right" width="45%" alt="GIF" src="./spinning-globe-white.gif" />
+<img align="right" width="44%" alt="GIF" src="./spinning-globe-white.gif" />
 <br>
 
 ```
