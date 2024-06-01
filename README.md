@@ -10,7 +10,7 @@
 
 </p>
 
-<img align="right" width="33%" alt="GIF" src="./terrasect.gif" />
+<img align="right" width="33%" alt="GIF" src="./spinning-white-globe.gif" />
 
 ```
 🔭 def work(self): -> list
