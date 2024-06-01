@@ -20,13 +20,13 @@
 - 🌱 def learn(self): -> str
 	return "Docker and Kubernetes"
 - 👯 def seek(self): -> bool
-	return self.full_time and (web3 or ai or research)
+	return full_time and (web3 or ai research)
 
 - 💬 AMA! You've got the deets, fire away!
-- ⚡ Fun fact: I can only release very few codes to
-                protect my stakeholders' confidentiality,
+- ⚡ Fun fact: I can only release very few codes
+		to protect my stakeholders,
                 but we can always have a ♨️ talk
-                about high-level concepts and design.
+                about high-level concepts & design.
 ```
 
 
