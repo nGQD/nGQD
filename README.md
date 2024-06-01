@@ -10,7 +10,7 @@
 <a href="mailto:ngqiding@gmail.com?subject=Greetings,%20Qi%20Ding"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
 </p>
 
-<img align="right" width="50%" alt="GIF" src="./spinning-globe-white.gif" />
+<img align="right" width="33%" alt="GIF" src="./spinning-globe-white.gif" />
 
 <br>
 
