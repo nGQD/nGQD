@@ -79,10 +79,7 @@
 
 ## 🏆 GitHub Trophies
 <p align="center" >
-	
-<!--<img src="https://github-profile-trophy.vercel.app/?username=nGQD&theme=onedark&no-frame=false&no-bg=true&margin-w=4&&rank=-?">-->
 <img src="https://github-profile-trophy.vercel.app/?username=nGQD&column=-1&theme=dracula&no-frame=false&rank=-?">
-
 </p>
 	
 ## 🔝 Contribution Leaderboard
