@@ -80,8 +80,3 @@
 <p align="center" >
 	<img src="https://github-profile-trophy.vercel.app/?username=nGQD&column=-1&theme=dracula&no-frame=false&rank=-?">
 </p>
-	
-## 🔝 Contribution Leaderboard
-<p align="center" >
-	<img src="https://github-contributor-stats.vercel.app/api?username=nGQD&theme=dark&combine_all_yearly_contributions=true">
-</p>
