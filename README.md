@@ -27,8 +27,6 @@
                 about high-level concepts & design.
 ```
 
-<img align="center" width="100%" alt="GIF" src="./terminal.gif" />
-
 
 # 💻 Tech Stack:
 <div align="center" >
@@ -110,3 +108,6 @@
 <p align="center" >
 	<img src="https://github-profile-trophy.vercel.app/?username=nGQD&column=-1&theme=dracula&no-frame=false&rank=-?">
 </p>
+
+<img align="center" width="100%" alt="GIF" src="./terminal.gif" />
+
