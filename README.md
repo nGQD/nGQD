@@ -2,8 +2,6 @@
 
 # 💫 About Me:
 
-<img align="center" width="100%" alt="GIF" src="./terminal.gif" />
-
 <p align="center">
 	<br>
 	<a href="mailto:ngqiding@gmail.com?subject=Greetings,%20Qi%20Ding"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>&nbsp;
@@ -28,6 +26,8 @@
                 but we can always have a ♨️ talk
                 about high-level concepts & design.
 ```
+
+<img align="center" width="100%" alt="GIF" src="./terminal.gif" />
 
 
 # 💻 Tech Stack:
