@@ -83,5 +83,5 @@
 	
 ## 🔝 Contribution Leaderboard
 <p align="center" >
-	<img src="https://github-contributor-stats.vercel.app/api?username=nGQD&limit=3&theme=dark&combine_all_yearly_contributions=true">
+	<img src="https://github-readme-stats-five-nu-81.vercel.app/api?username=nGQD&theme=dark&combine_all_yearly_contributions=true">
 </p>
