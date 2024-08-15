@@ -2,6 +2,7 @@
 
 # 💫 About Me:
 
+<img align="center" width="100%" alt="GIF" src="./terminal.gif" />
 
 <p align="center">
 	<br>
