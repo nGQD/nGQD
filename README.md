@@ -105,9 +105,11 @@
 </p>
 
 # 🏆 GitHub Trophies
-<p align="center" >
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=nGQD&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
+<!--<p align="center" >
 	<img src="https://github-profile-trophy.vercel.app/?username=nGQD&column=-1&theme=dracula&no-frame=false&rank=-?">
-</p>
+</p>-->
 
 <img align="center" width="100%" alt="GIF" src="./terminal.gif" />
 
