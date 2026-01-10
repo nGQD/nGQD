@@ -1,0 +1,119 @@
+# =============================================================================
+# HuggingFace Spaces Keep-Alive Workflow
+# =============================================================================
+# 
+# PURPOSE: Ping HF Spaces heartbeat endpoints periodically to prevent cold starts.
+#          HF free-tier spaces sleep after ~15 minutes of inactivity.
+#          This workflow pings every 14 minutes to keep spaces warm.
+#
+# COST: GitHub Actions free tier includes 2,000 minutes/month.
+#       This workflow uses ~3 minutes/day = ~90 minutes/month (well under limit).
+#
+# SETUP:
+#   1. Add this file to .github/workflows/keep-alive.yml
+#   2. Set repository secrets:
+#      - HF_FRONTEND_URL: Your frontend space URL (e.g., https://ngqd-innocounterc.hf.space)
+#      - HF_BACKEND_URL: Your backend space URL (e.g., https://ngqd-innocounterc-.hf.space)
+#      - HF_TOKEN: (Optional) HuggingFace token if spaces are private
+#
+# =============================================================================
+
+name: Keep HF Spaces Alive
+
+on:
+  # Run every 14 minutes (HF spaces sleep after ~15 min inactivity)
+  schedule:
+    - cron: '*/14 * * * *'
+  
+  # Allow manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      ping_frontend:
+        description: 'Ping frontend space'
+        required: false
+        default: 'true'
+        type: boolean
+      ping_backend:
+        description: 'Ping backend space'
+        required: false
+        default: 'true'
+        type: boolean
+
+env:
+  # Default URLs (override with repository secrets)
+  FRONTEND_URL: ${{ secrets.HF_FRONTEND_URL || 'https://ngqd-innocounterc.hf.space' }}
+  BACKEND_URL: ${{ secrets.HF_BACKEND_URL || 'https://ngqd-innocounterc-.hf.space' }}
+
+jobs:
+  ping-spaces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - name: Ping Frontend Heartbeat
+        if: ${{ github.event.inputs.ping_frontend != 'false' }}
+        run: |
+          echo "🔔 Pinging frontend: $FRONTEND_URL"
+          
+          # Try Gradio API heartbeat endpoint first
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            --max-time 60 \
+            -X POST \
+            -H "Content-Type: application/json" \
+            "$FRONTEND_URL/api/heartbeat" \
+            -d '{"data":[]}' 2>/dev/null || echo "error")
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Frontend heartbeat OK (HTTP $HTTP_CODE)"
+            echo "Response: $BODY"
+          else
+            # Fallback: just ping the main page
+            echo "⚠️ Heartbeat endpoint returned $HTTP_CODE, trying main page..."
+            FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "$FRONTEND_URL/" 2>/dev/null || echo "error")
+            if [ "$FALLBACK" = "200" ]; then
+              echo "✅ Frontend main page OK (HTTP $FALLBACK)"
+            else
+              echo "❌ Frontend unreachable (HTTP $FALLBACK)"
+            fi
+          fi
+
+      - name: Ping Backend Heartbeat
+        if: ${{ github.event.inputs.ping_backend != 'false' }}
+        run: |
+          echo "🔔 Pinging backend: $BACKEND_URL"
+          
+          # Try Gradio API heartbeat endpoint
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            --max-time 120 \
+            -X POST \
+            -H "Content-Type: application/json" \
+            "$BACKEND_URL/api/heartbeat" \
+            -d '{"data":[]}' 2>/dev/null || echo "error")
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Backend heartbeat OK (HTTP $HTTP_CODE)"
+            echo "Response: $BODY"
+          else
+            # Fallback: just ping the main page (may trigger cold start)
+            echo "⚠️ Heartbeat endpoint returned $HTTP_CODE, trying main page..."
+            FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" --max-time 120 "$BACKEND_URL/" 2>/dev/null || echo "error")
+            if [ "$FALLBACK" = "200" ]; then
+              echo "✅ Backend main page OK (HTTP $FALLBACK) - may have triggered cold start"
+            else
+              echo "❌ Backend unreachable (HTTP $FALLBACK)"
+            fi
+          fi
+
+      - name: Summary
+        run: |
+          echo "🏁 Keep-alive ping complete at $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo ""
+          echo "ℹ️  If spaces were sleeping, they should now be warming up."
+          echo "    Cold start typically takes 30-60 seconds for frontend,"
+          echo "    and 60-120 seconds for backend (model loading)."
