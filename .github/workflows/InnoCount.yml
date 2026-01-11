@@ -41,8 +41,8 @@ on:
 
 env:
   # Default URLs (override with repository secrets)
-  FRONTEND_URL: ${{ secrets.HF_FRONTEND_URL || 'https://ngqd-innocounterc.hf.space' }}
-  BACKEND_URL: ${{ secrets.HF_BACKEND_URL || 'https://ngqd-innocounterc-.hf.space' }}
+  FRONTEND_URL: ${{ secrets.INNOCOUNT_BE }}
+  BACKEND_URL: ${{ secrets.INNOCOUNT_BE }}
 
 jobs:
   ping-spaces:
