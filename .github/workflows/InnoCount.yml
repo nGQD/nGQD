@@ -1,31 +1,26 @@
 # =============================================================================
-# HuggingFace Spaces Keep-Alive Workflow
+# HuggingFace Spaces Keep-Alive Workflow (Authenticated Version)
 # =============================================================================
 # 
-# PURPOSE: Ping HF Spaces heartbeat endpoints periodically to prevent cold starts.
-#          HF free-tier spaces sleep after ~15 minutes of inactivity.
-#          This workflow pings every 14 minutes to keep spaces warm.
-#
-# COST: GitHub Actions free tier includes 2,000 minutes/month.
-#       This workflow uses ~3 minutes/day = ~90 minutes/month (well under limit).
+# PURPOSE: Ping HF Spaces periodically to prevent cold starts.
+#          Handles Gradio FE authentication via session cookies.
 #
 # SETUP:
 #   1. Add this file to .github/workflows/keep-alive.yml
 #   2. Set repository secrets:
-#      - HF_FRONTEND_URL: Your frontend space URL (e.g., https://ngqd-innocounterc.hf.space)
-#      - HF_BACKEND_URL: Your backend space URL (e.g., https://ngqd-innocounterc-.hf.space)
-#      - HF_TOKEN: (Optional) HuggingFace token if spaces are private
+#      - INNOCOUNT_FE: Your frontend URL
+#      - INNOCOUNT_BE: Your backend URL
+#      - INNOCOUNT_USER_0: Your FE Gradio username
+#      - INNOCOUNT_PW_0: Your FE Gradio password
+#      - HF_TOKEN: Your HuggingFace Token (for backend API access)
 #
 # =============================================================================
 
 name: Keep HF Spaces Alive
 
 on:
-  # Run every 14 minutes (HF spaces sleep after ~15 min inactivity)
   schedule:
     - cron: '*/14 * * * *'
-  
-  # Allow manual trigger for testing
   workflow_dispatch:
     inputs:
       ping_frontend:
@@ -40,11 +35,11 @@ on:
         type: boolean
 
 env:
-  # Default URLs (override with repository secrets)
   FRONTEND_URL: ${{ secrets.INNOCOUNT_FE }}
   BACKEND_URL: ${{ secrets.INNOCOUNT_BE }}
-  # Optional HF token for private spaces (set in repo secrets as HF_TOKEN)
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  FE_USER: ${{ secrets.INNOCOUNT_USER_0 }}
+  FE_PASS: ${{ secrets.INNOCOUNT_PW_0 }}
 
 jobs:
   ping-spaces:
@@ -52,134 +47,71 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      - name: Ping Frontend Heartbeat
+      - name: Ping Frontend (Authenticated)
         if: ${{ github.event.inputs.ping_frontend != 'false' }}
         run: |
           echo "🔔 Pinging frontend: $FRONTEND_URL"
-          echo "HF_TOKEN present: ${HF_TOKEN:+yes}"
-
-          # Preferred flow: Gradio call API (POST -> stream result)
-          if [ -n "$HF_TOKEN" ]; then
-            RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 60 -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $HF_TOKEN" "$FRONTEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
+          
+          # 1. Login to establish session and save cookie
+          echo "🔑 Logging into Frontend..."
+          LOGIN_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -c cookies.txt \
+            -X POST "$FRONTEND_URL/login" \
+            -d "username=$FE_USER&password=$FE_PASS")
+          
+          if [ "$LOGIN_STATUS" != "200" ] && [ "$LOGIN_STATUS" != "302" ]; then
+            echo "❌ Login failed with status $LOGIN_STATUS. Check credentials."
           else
-            RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 60 -X POST -H "Content-Type: application/json" "$FRONTEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
+            echo "✅ Login successful (Status $LOGIN_STATUS)"
           fi
+
+          # 2. Ping heartbeat using session cookie
+          RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 60 -b cookies.txt \
+            -X POST -H "Content-Type: application/json" \
+            "$FRONTEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}')
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
-
-          # Extract event_id robustly (try jq, fallback to awk)
           EVENT_ID=$(echo "$BODY" | jq -r '.event_id' 2>/dev/null || echo "$BODY" | awk -F'"' '{print $4}')
 
-          if [ -n "$EVENT_ID" ] && [ "$EVENT_ID" != "null" ]; then
-            echo "Event ID: $EVENT_ID — streaming response (timeout 60s)..."
-            if [ -n "$HF_TOKEN" ]; then
-              STREAM=$(curl -s -N --max-time 60 -H "Authorization: Bearer $HF_TOKEN" "$FRONTEND_URL/gradio_api/call/heartbeat/$EVENT_ID" 2>/dev/null || echo "error")
+          if [ -z "$EVENT_ID" ] || [ "$EVENT_ID" = "null" ]; then
+            echo "⚠️ Heartbeat API failed (HTTP $HTTP_CODE), trying main page fallback..."
+            FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" -b cookies.txt "$FRONTEND_URL/")
+            if [ "$FALLBACK" = "200" ]; then
+              echo "✅ Frontend main page OK (Authenticated session active)"
             else
-              STREAM=$(curl -s -N --max-time 60 "$FRONTEND_URL/gradio_api/call/heartbeat/$EVENT_ID" 2>/dev/null || echo "error")
-            fi
-
-            if [ "$STREAM" != "error" ] && [ -n "$STREAM" ]; then
-              echo "✅ Frontend heartbeat OK (event stream returned)"
-              echo "$STREAM"
-            else
-              echo "⚠️ Event stream failed — falling back to /api/heartbeat"
-              # Fall through to /api/heartbeat fallback below
-              HTTP_CODE=0
+              echo "❌ Frontend unreachable even with auth (HTTP $FALLBACK)"
             fi
           else
-            echo "⚠️ No event_id returned (HTTP $HTTP_CODE). Response body:"
-            echo "$BODY"
-            HTTP_CODE=0
+            echo "✅ Heartbeat OK. Event ID: $EVENT_ID"
+            # Briefly stream to ensure process stays active
+            curl -s -N --max-time 10 -b cookies.txt "$FRONTEND_URL/gradio_api/call/heartbeat/$EVENT_ID" > /dev/null
           fi
 
-          # Fallback to /api/heartbeat or root page
-          if [ "$HTTP_CODE" != "200" ]; then
-            if [ -n "$HF_TOKEN" ]; then
-              RESPONSE2=$(curl -s -w "\n%{http_code}" --max-time 60 -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $HF_TOKEN" "$FRONTEND_URL/api/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-            else
-              RESPONSE2=$(curl -s -w "\n%{http_code}" --max-time 60 -X POST -H "Content-Type: application/json" "$FRONTEND_URL/api/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-            fi
-            HTTP_CODE2=$(echo "$RESPONSE2" | tail -n1)
-            BODY2=$(echo "$RESPONSE2" | sed '$d')
-            if [ "$HTTP_CODE2" = "200" ]; then
-              echo "✅ Frontend /api/heartbeat OK (HTTP $HTTP_CODE2)"
-              echo "Response: $BODY2"
-            else
-              echo "⚠️ /api/heartbeat returned $HTTP_CODE2, trying main page..."
-              FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "$FRONTEND_URL/" 2>/dev/null || echo "error")
-              if [ "$FALLBACK" = "200" ]; then
-                echo "✅ Frontend main page OK (HTTP $FALLBACK)"
-              else
-                echo "❌ Frontend unreachable (HTTP $FALLBACK)"
-              fi
-            fi
-          fi
-      - name: Ping Backend Heartbeat
+      - name: Ping Backend
         if: ${{ github.event.inputs.ping_backend != 'false' }}
         run: |
           echo "🔔 Pinging backend: $BACKEND_URL"
-          echo "HF_TOKEN present: ${HF_TOKEN:+yes}"
+          
+          AUTH_HEADER=""
+          if [ -n "$HF_TOKEN" ]; then AUTH_HEADER="Authorization: Bearer $HF_TOKEN"; fi
 
-          # Preferred flow: Gradio call API (POST -> stream result)
-          if [ -n "$HF_TOKEN" ]; then
-            RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 120 -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $HF_TOKEN" "$BACKEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-          else
-            RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 120 -X POST -H "Content-Type: application/json" "$BACKEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-          fi
+          RESPONSE=$(curl -s -w "\n%{http_code}" --max-time 120 \
+            -X POST -H "Content-Type: application/json" -H "$AUTH_HEADER" \
+            "$BACKEND_URL/gradio_api/call/heartbeat" -d '{"data":[]}')
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
-
           EVENT_ID=$(echo "$BODY" | jq -r '.event_id' 2>/dev/null || echo "$BODY" | awk -F'"' '{print $4}')
 
           if [ -n "$EVENT_ID" ] && [ "$EVENT_ID" != "null" ]; then
-            echo "Event ID: $EVENT_ID — streaming response (timeout 120s)..."
-            if [ -n "$HF_TOKEN" ]; then
-              STREAM=$(curl -s -N --max-time 120 -H "Authorization: Bearer $HF_TOKEN" "$BACKEND_URL/gradio_api/call/heartbeat/$EVENT_ID" 2>/dev/null || echo "error")
-            else
-              STREAM=$(curl -s -N --max-time 120 "$BACKEND_URL/gradio_api/call/heartbeat/$EVENT_ID" 2>/dev/null || echo "error")
-            fi
-
-            if [ "$STREAM" != "error" ] && [ -n "$STREAM" ]; then
-              echo "✅ Backend heartbeat OK (event stream returned)"
-              echo "$STREAM"
-            else
-              echo "⚠️ Event stream failed — falling back to /api/heartbeat"
-              HTTP_CODE=0
-            fi
+            echo "✅ Backend heartbeat OK. Event ID: $EVENT_ID"
+            curl -s -N --max-time 10 -H "$AUTH_HEADER" "$BACKEND_URL/gradio_api/call/heartbeat/$EVENT_ID" > /dev/null
           else
-            echo "⚠️ No event_id returned (HTTP $HTTP_CODE). Response body:"
-            echo "$BODY"
-            HTTP_CODE=0
+            echo "⚠️ Backend API failed, trying direct ping..."
+            FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" -H "$AUTH_HEADER" "$BACKEND_URL/")
+            echo "Backend Status: $FALLBACK"
           fi
 
-          # Fallback to /api/heartbeat or root page
-          if [ "$HTTP_CODE" != "200" ]; then
-            if [ -n "$HF_TOKEN" ]; then
-              RESPONSE2=$(curl -s -w "\n%{http_code}" --max-time 120 -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $HF_TOKEN" "$BACKEND_URL/api/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-            else
-              RESPONSE2=$(curl -s -w "\n%{http_code}" --max-time 120 -X POST -H "Content-Type: application/json" "$BACKEND_URL/api/heartbeat" -d '{"data":[]}' 2>/dev/null || echo "error")
-            fi
-            HTTP_CODE2=$(echo "$RESPONSE2" | tail -n1)
-            BODY2=$(echo "$RESPONSE2" | sed '$d')
-            if [ "$HTTP_CODE2" = "200" ]; then
-              echo "✅ Backend /api/heartbeat OK (HTTP $HTTP_CODE2)"
-              echo "Response: $BODY2"
-            else
-              echo "⚠️ /api/heartbeat returned $HTTP_CODE2, trying main page..."
-              FALLBACK=$(curl -s -o /dev/null -w "%{http_code}" --max-time 120 "$BACKEND_URL/" 2>/dev/null || echo "error")
-              if [ "$FALLBACK" = "200" ]; then
-                echo "✅ Backend main page OK (HTTP $FALLBACK) - may have triggered cold start"
-              else
-                echo "❌ Backend unreachable (HTTP $FALLBACK)"
-              fi
-            fi
-          fi
       - name: Summary
         run: |
           echo "🏁 Keep-alive ping complete at $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          echo ""
-          echo "ℹ️  If spaces were sleeping, they should now be warming up."
-          echo "    Cold start typically takes 30-60 seconds for frontend,"
-          echo "    and 60-120 seconds for backend (model loading)."
