@@ -1,0 +1,28 @@
+name: Cloudflare DDNS Update
+
+on:
+  schedule:
+    # Runs every 15 minutes (GitHub's minimum reliable interval)
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # Allows you to run it manually for testing
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Public IP
+        id: ip
+        run: echo "current_ip=$(curl -s https://api.ipify.org)" >> $GITHUB_OUTPUT
+
+      - name: Update Cloudflare DNS
+        run: |
+          curl -X PUT "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/dns_records/${{ secrets.CF_RECORD_ID }}" \
+               -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+               -H "Content-Type: application/json" \
+               --data '{
+                 "type": "A",
+                 "name": "innocount.innonics.ip-ddns.com",
+                 "content": "${{ steps.ip.outputs.current_ip }}",
+                 "ttl": 120,
+                 "proxied": false
+               }'
