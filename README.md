@@ -110,4 +110,3 @@
 </p>
 
 <img align="center" width="100%" alt="GIF" src="./terminal.gif" />
-
