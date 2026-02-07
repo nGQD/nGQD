@@ -109,10 +109,9 @@
 	<img src="https://github-profile-trophy.vercel.app/?username=nGQD&column=-1&theme=dracula&no-frame=false&rank=-?">
 </p>
 -->
-
-# 🏆 GitHub Trophies
+# 🏆 GitHub Stats
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=nGQD&theme=dracula&column=-1" alt="nGQD's GitHub Trophies" />
+  <img src="https://github-readme-stats.vercel.app/api?username=nGQD&show_icons=true&theme=dracula" alt="nGQD's GitHub Stats" />
 </p>
 
 <img align="center" width="100%" alt="GIF" src="./terminal.gif" />
