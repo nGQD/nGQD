@@ -332,8 +332,7 @@ I'm strategically evaluating opportunities that offer:
 
 ---
 
-<sup>**Fun Fact**: Completed Master's degree in 10 months. 
-<br>
+
 Can only release limited code publicly due to stakeholder protections, but always happy to discuss high-level architecture and technical approaches.</sup>
 
 </div>
