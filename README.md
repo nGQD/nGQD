@@ -29,7 +29,7 @@ Managing 28 researchers across 2 MOHE/MOSTI government partnerships
 **80% operational automation** at multi-site container depot operations
 
 **PhD Candidate** | Universiti Malaya (QS #58)  
-Fast-tracked from Master's (completed in 10 months) to PhD  
+Fast-tracked from Master's to PhD  
 **3 patents in application** | Published researcher (Elsevier, IEEE)  
 Research focus: Energy-efficient AI for autonomous systems
 
@@ -332,6 +332,8 @@ I'm strategically evaluating opportunities that offer:
 
 ---
 
-<sup>**Fun Fact**: Completed Master's degree in 10 months. Can only release limited code publicly due to stakeholder protections, but always happy to discuss high-level architecture and technical approaches.</sup>
+<sup>**Fun Fact**: Completed Master's degree in 10 months. 
+<br>
+Can only release limited code publicly due to stakeholder protections, but always happy to discuss high-level architecture and technical approaches.</sup>
 
 </div>
