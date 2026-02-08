@@ -6,7 +6,7 @@
 
 ### Director @ Innonics | PhD Candidate (AI) | Ex-Binance QA Engineer
 
-*Transforming billion-dollar logistics operations through AI — from 10-month Master's to RM 1.9M+ in secured government contracts*
+*Transforming billion-dollar logistics operations through AI — RM 1.9M+ in secured government contracts*
 
 <br>
 
@@ -99,7 +99,7 @@ class ExceptionalTrajectory:
             "compensation": "Competitive + Equity"
         }
 ```
-```
+
 
 <br>
 
@@ -315,10 +315,6 @@ I'm strategically evaluating opportunities that offer:
 <br>
 
 ## 📈 GitHub Analytics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nGQD&show_icons=true&theme=dracula&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" />
-</p>
 
 <p align="center">
   <picture>
