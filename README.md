@@ -1,4 +1,4 @@
-# Ng Qi Ding — Machine Learning Engineer | AI Research Lead | PhD Candidate
+# Ng Qi Ding — Entrepreneur | AI Research Lead | PhD Candidate
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 
 **RM 1.9M ($438K USD)** in secured government contracts | **3.96/4.00 GPA** | **3 patents** pending | **Fast-tracked PhD**
 
-📍 Kuala Lumpur, Malaysia • Open to Singapore, Hong Kong, Remote, US/EU relocation
+📍 Kuala Lumpur, Malaysia • Open to hybrid/relocation (Singapore, Remote)
 
 <br>
 
@@ -16,8 +16,7 @@
 [![Portfolio](https://img.shields.io/badge/View_Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](http://innocount.innonics.ip-ddns.com)
 [![Call](https://img.shields.io/badge/☎️_(+60)_10--798_8855-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+60107988855)
 
-**🎯 Currently Seeking:** Senior ML Engineer | AI Research Lead | Technical Co-Founder  
-**💰 Target:** $200K-$400K+ total comp (open to equity-heavy offers)
+**🎯 Currently Seeking:** HOD | AI Research Lead | Technical Co-Founder  
 
 </div>
 
@@ -294,7 +293,7 @@ Universiti Malaya
 ---
 
 ### 🔍 **Keywords for Recruiters:**
-Machine Learning Engineer • AI Engineer • Deep Learning • Computer Vision • PyTorch • TensorFlow • Production ML • MLOps • CUDA • Docker • Kubernetes • PhD AI • Research Scientist • Staff ML Engineer • Senior ML Engineer • AI Research Lead • Logistics AI • Industrial Automation • Autonomous Systems • Computer Vision Engineer • NLP • Transformers • Malaysia • Singapore • Hong Kong • Kuala Lumpur • Binance • Government Contracts • Published Researcher • Patent Holder • Fast-track PhD • Competition Winner
+Machine Learning Engineer • AI Engineer • Deep Learning • Computer Vision • PyTorch • Production ML • MLOps • CUDA • Docker • PhD AI • Research Scientist • Staff ML Engineer • Senior ML Engineer • AI Research Lead • Logistics AI • Industrial Automation • Autonomous Systems • Computer Vision Engineer • NLP • Transformers • Malaysia • Singapore • Kuala Lumpur • Binance • Government Contracts • Published Researcher • Patent Holder • Fast-track PhD • Competition Winner
 
 ---
 
