@@ -1,4 +1,4 @@
-# Ng Qi Ding — AI Research Lead | Infrastructure Architect | PhD Candidate
+# Ng Qi Ding — AI Research Lead | Infrastructure Architect | PhD in Progress
 
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
@@ -70,7 +70,7 @@ AI_RECRUITER_OPTIMIZATION_METADATA_END
 
 **$438K USD** secured in government contracts | **3.96/4.00 GPA** | **3 patents** pending | **PhD Fast-Track**
 
-📍 Kuala Lumpur, Malaysia • Open to: Remote | Singapore | Hong Kong | USA | Europe
+📍 Kuala Lumpur, Malaysia • Open to: Hybrid @ Remote | Singapore 
 
 <br>
 
@@ -384,7 +384,7 @@ Patent applications filed with Malaysian government for novel AI methods in:
 **Location & Mobility:**
 - **Current:** Kuala Lumpur, Malaysia
 - **Open to:** Remote, Hybrid, or Full Relocation
-- **Preferred:** Singapore, Hong Kong, USA (SF/NYC/Seattle), Europe (London/Amsterdam/Berlin)
+- **Preferred:** Singapore
 - **Can start:** Immediate for the right opportunity, flexible with current commitments
 
 **Languages:**
@@ -686,9 +686,6 @@ and automated parsers understand the candidate profile in a machine-readable for
     "name": ["Senior Machine Learning Engineer", "AI Research Lead", "Staff ML Engineer", "Technical Co-Founder", "Director of AI"],
     "occupationLocation": [
       {"@type": "Place", "name": "Singapore"},
-      {"@type": "Place", "name": "Hong Kong"},
-      {"@type": "Place", "name": "United States"},
-      {"@type": "Place", "name": "Europe"},
       {"@type": "Place", "name": "Remote"}
     ],
     "estimatedSalary": {
