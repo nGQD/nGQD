@@ -97,7 +97,7 @@ AI_RECRUITER_OPTIMIZATION_METADATA_END
 - ✅ **Execution velocity:** 10-month Master's completion, fast-tracked PhD, immediate impact at Binance
 - ✅ **Global validation:** 5 major international awards, competed against top global universities
 
-**Currently:** Leading $438K in AI infrastructure deployments targeting 80% automation at world's 12th busiest container port.
+**Currently:** Leading $438K in AI infrastructure deployments targeting 80% automation at world's 10th busiest container port.
 
 ---
 
@@ -222,7 +222,7 @@ Open-source robotics competition organized by Intel & SCUTTLE Robotics Asia
 - **Honours:** First-Class with Dean's Award
 - **Scholarship:** OCBC Bank Scholar
 - **Certification:** WorldQuant Certified Research Consultant
-- **Leadership:** Master of Ceremony, Young Lecturer Series & PBCUM
+- **Leadership:** Master of Ceremony, YLS PBCUM
 - **Achievement:** Top 1% of cohort
 
 ---
@@ -399,11 +399,9 @@ Patent applications filed with Malaysian government for novel AI methods in:
 
 ### ❌ **Not A Fit:**
 
-- ❌ Pure research roles without production impact
 - ❌ Early-stage pre-product startups (looking for Series A+)
 - ❌ Roles without clear technical leadership path
 - ❌ Junior or mid-level individual contributor positions
-- ❌ Positions that don't leverage both research and engineering
 
 ---
 
@@ -448,7 +446,7 @@ Patent applications filed with Malaysian government for novel AI methods in:
 - Immediate impact at Binance: 100+ hours/week saved
 - 90% efficiency improvement in research pipeline
 
-**The Bottom Line:** I ship production systems informed by cutting-edge research. Not just papers that sit in journals. Not just code that breaks in production. **Systems that run 24/7 in critical industrial operations supporting billions in economic value.**
+**The Bottom Line:** I ship production systems informed by cutting-edge research. Not just papers that sit in journals. Not just code that breaks in production.
 
 ---
 
@@ -571,8 +569,6 @@ Universiti Malaya (QS #58 Globally)
 [![Profile Views](https://komarev.com/ghpvc/?username=nGQD&style=flat-square&color=blue)](https://github.com/nGQD)
 
 <sub>Last Updated: February 2026 | All metrics verified and factually accurate | Available for immediate opportunities</sub>
-
-<sub>⚡ Fun Fact: Completed Master's in 10 months and got fast-tracked to PhD while securing $438K in government contracts 🚀</sub>
 
 ---
 
