@@ -136,16 +136,15 @@ PhD Candidate · Universiti Malaya · Binance · Remote ML Engineer · Generativ
 # NG QI DING
 ### Director · AI Researcher · Infrastructure Architect
 
-[![PhD Candidate · UM](https://img.shields.io/badge/PhD_Candidate-Universiti_Malaya_(QS_%2358)-FFD700?style=flat-square&labelColor=0C0C14&color=FFD700)](https://um.edu.my)
-[![Published Research](https://img.shields.io/badge/Published-Q1_Elsevier_%26_IEEE-D4D8E8?style=flat-square&labelColor=0C0C14)](https://scholar.google.com)
+[![PhD Candidate](https://img.shields.io/badge/PhD_Candidate-Universiti_Malaya_%28QS_%2358%29-FFD700?style=flat-square&labelColor=0C0C14)](https://um.edu.my)
+[![Published](https://img.shields.io/badge/Published-Q1_Elsevier_%26_IEEE-D4D8E8?style=flat-square&labelColor=0C0C14)](https://scholar.google.com)
 [![Patents](https://img.shields.io/badge/Patents-3_Filed-FFD700?style=flat-square&labelColor=0C0C14)](https://github.com/nGQD)
-[![Specialisation](https://img.shields.io/badge/BCI_%C2%B7_Neuromorphic_%C2%B7_LLM-Researcher-8A90A8?style=flat-square&labelColor=0C0C14)](https://github.com/nGQD)
-
-[![Email](https://img.shields.io/badge/ngqiding%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ngqiding@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/qi--ding--ng-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/qi-ding-ng)
-[![GitHub](https://img.shields.io/badge/nGQD-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nGQD)
-[![WhatsApp](https://img.shields.io/badge/(+60)_10--798_8855-25D366?style=flat-square&logo=whatsapp&logoColor=white)](tel:+60107988855)
-[![Location](https://img.shields.io/badge/Kuala_Lumpur%2C_Malaysia-Open_to_Singapore_%26_Remote-555A70?style=flat-square&labelColor=0C0C14)](https://github.com/nGQD)
+[![Specialisation](https://img.shields.io/badge/BCI_%7C_Neuromorphic_%7C_LLM-Researcher-8A90A8?style=flat-square&labelColor=0C0C14)](https://github.com/nGQD)
+[![Email](https://img.shields.io/badge/Email-ngqiding%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ngqiding@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-qi--ding--ng-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/qi-ding-ng)
+[![GitHub](https://img.shields.io/badge/GitHub-nGQD-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nGQD)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2B60_10--798_8855-25D366?style=flat-square&logo=whatsapp&logoColor=white)](tel:+60107988855)
+[![Location](https://img.shields.io/badge/Location-Kuala_Lumpur%2C_Malaysia_%7C_Open_to_Remote-555A70?style=flat-square&labelColor=0C0C14)](https://github.com/nGQD)
 
 ---
 
@@ -178,7 +177,7 @@ Former **Binance Infrastructure Engineer** ($76B/day, 90M users).*
 
 ## 🎯 Application Target
 
-> **Machine Learning Engineer · Tether — 100% Remote Worldwide**
+> **AI, Web3, Research, Remote**
 
 ---
 
