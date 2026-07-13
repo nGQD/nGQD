@@ -199,7 +199,7 @@ Former **Binance Infrastructure Engineer** ($76B/day, 90M users).*
 
 ### 🧠 Prof. Dr. Loo Chu Kiong
 **Primary PhD Supervisor · Full Professor**  
-*Faculty of Computer Science & IT · Universiti Malaya (QS #58)*
+*Faculty of Computer Science & IT · Universiti Malaya (QS #56)*
 
 - Full Professor in **Cognitive Robotics, Neural Computing**, and Intelligent Systems
 - Extensive publication record in **computational neuroscience** and brain-inspired architectures
@@ -341,7 +341,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 ## 🎓 Education
 
 ### Doctor of Philosophy — Artificial Intelligence
-**Universiti Malaya (QS #58)**  
+**Universiti Malaya (QS #56)**  
 `MAR 2025 — MAR 2027 (Expected)`
 
 - Expedited from Master's in **10 months**
@@ -352,8 +352,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 ---
 
 ### Bachelor of Computer Science (Hons) — Artificial Intelligence
-**Universiti Malaya (QS #58)**  
-`OCT 2020 — MAR 2024`
+**Universiti Malaya (QS #56)**  
 
 - **GPA: 3.96 / 4.00** — First-Class Honours
 - **Dean's Award** recipient
@@ -383,6 +382,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 | Mandarin | Native |
 | Malay | Native |
 | Cantonese | Limited Working |
+| Hokkien | Limited Working |
 
 ---
 
