@@ -230,7 +230,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 
 ### Director
 **Innonics Sdn. Bhd. · Kuala Lumpur, Malaysia**  
-`APR 2023 — PRESENT`
+`2023 — PRESENT`
 
 - Directing a **RM 2.08M National AI Portfolio**, sole technical lead across multiple government-funded AI deployments
 - Architecting **multi-agent LLM orchestration** pipelines (RAG, VLM, generative AI) to cut time-to-market for industrial automation
@@ -242,7 +242,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 
 ### Infrastructure Engineer *(Contract)*
 **Binance Holdings Ltd. · Global (Remote)**  
-`JUL 2024 — DEC 2024`
+`2024`
 
 - Engineered test automation framework eliminating **100 man-hours/sprint** for FIAT division
 - Systems supporting **$76B/day trading volume** and **90 million active global users**
@@ -252,7 +252,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 
 ### Researcher
 **Universiti Malaya · Kuala Lumpur, Malaysia**  
-`MAR 2022 — APR 2023`
+`2022 - 2023`
 
 - Technical lead of **international R&D teams** across global AI hackathons
 - Produced **peer-reviewed Q1 publications** in deep learning and neural image analysis
@@ -342,7 +342,7 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 
 ### Doctor of Philosophy — Artificial Intelligence
 **Universiti Malaya (QS #56)**  
-`MAR 2025 — MAR 2027 (Expected)`
+`2025 — 2027`
 
 - Expedited from Master's in **10 months**
 - **1 Patent · 2 Q1 Articles**
@@ -404,8 +404,6 @@ Ranked **3rd globally** in the H1 (primary cortex) test phase of the FALCON BCI 
 <div align="center">
 
 **NG QI DING · KUALA LUMPUR, MALAYSIA · OPEN TO GLOBAL REMOTE**
-
-`status: ACTIVELY_SEEKING` · `target: ML_ENGINEER` · `sync: 2026`
 
 <!-- ATS KEYWORD BLOCK — do not remove:
 Machine Learning Engineer, Deep Learning, Artificial Intelligence, Neural Networks, Spiking Neural Networks,
